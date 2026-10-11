@@ -80,15 +80,17 @@ export default function Wizard() {
           const l = d.location
           setFormData(prev => ({
             ...prev,
-            shopType:   l.shop_type || '',
-            locationId: l.id || '',
-            shopName:   l.name || '',
-            shopPhone:  l.phone || '',
-            shopAddress: l.address || '',
-            shopTagline: l.tagline || '',
-            logoUrl:    l.logo_url || '',
-            atmosphere: l.atmosphere || 'default-shop-v1',
-            slug:       l.slug || '',
+            shopType:    l.shop_type    || '',
+            locationId:  l.id           || '',
+            firstName:   l.first_name   || '',
+            companyName: l.company_name || '',
+            shopName:    l.name         || '',
+            shopPhone:   l.phone        || '',
+            shopAddress: l.address      || '',
+            shopTagline: l.tagline      || '',
+            logoUrl:     l.logo_url     || '',
+            atmosphere:  l.atmosphere   || 'default-shop-v1',
+            slug:        l.slug         || '',
           }))
         }
       })
@@ -161,11 +163,13 @@ export default function Wizard() {
           slug,
           shopType:   formData.shopType,
           locationId: locationId,
-          name:       formData.shopName,
-          tagline:    formData.shopTagline || null,
-          email:      formData.email || null,
-          phone:      formData.shopPhone || null,
-          atmosphere: formData.atmosphere || 'default-shop-v1',
+          name:         formData.shopName,
+          tagline:      formData.shopTagline  || null,
+          email:        formData.email        || null,
+          phone:        formData.shopPhone    || null,
+          atmosphere:   formData.atmosphere   || 'default-shop-v1',
+          first_name:   formData.firstName    || null,
+          company_name: formData.companyName  || null,
         }
         if (formData.logoUrl) body.logo_url = formData.logoUrl
         const r = isUpdateMode
