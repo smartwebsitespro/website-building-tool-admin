@@ -170,6 +170,7 @@ export default function Wizard() {
           atmosphere:   formData.atmosphere   || 'default-shop-v1',
           first_name:   formData.firstName    || null,
           company_name: formData.companyName  || null,
+          address:      formData.shopAddress  || null,
         }
         if (formData.logoUrl) body.logo_url = formData.logoUrl
         const r = isUpdateMode
